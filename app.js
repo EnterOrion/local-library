@@ -8,6 +8,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const catalogRouter = require("./routes/catalog");
 
 dotenv.config();
 const password = process.env.db_password;
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/catalog", catalogRouter);
 
 mongoose.set("strictQuery", false);
 const mongoDB = `mongodb+srv://myAtlasDBUser:${password}@cluster0.envg0u2.mongodb.net/?retryWrites=true&w=majority`;
