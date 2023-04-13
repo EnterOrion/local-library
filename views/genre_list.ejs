@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./head'); %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2"><%- include('./sidebar'); %></div>
+        <div class="col-sm-10">
+          <h1><%= title %></h1>
+          <ul>
+            <% if (list_genres.length !== 0) { %> <% for (let i = 0; i <
+            list_genres.length; i++) {%>
+            <li>
+              <a href="<%= list_genres[i].url %>"><%= list_genres[i].name %></a>
+            </li>
+
+            <%} %> <%} else { %>
+            <li>There are no genres.</li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
