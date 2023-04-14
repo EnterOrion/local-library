@@ -10,8 +10,8 @@
         <div class="col-sm-10">
           <h1>Title: <%= book.title %></h1>
           <p>
-            <strong>Author: <a href="<%= book.author.url %>"></a></strong><%=
-            book.author.name %>
+            <strong>Author:</strong> <a href="<%= book.author.url %>"><%=
+              book.author.name %></a>
           </p>
           <p><strong>Summary: </strong><%= book.summary %></p>
           <p><strong>ISBN: </strong><%= book.isbn %></p>
@@ -49,6 +49,10 @@
                 <% } else { %>
                   <p>There are no copies of this book in the library.</p>
                 <% } %>
+                <hr>
+                <p><a href="<%= book.url+'/update' %>">Update book</a></p>
+                  <p><a href="<%= book.url+'/delete' %>">Delete book</a></p>
+                </hr>
           </div>
         </div>
       </div>

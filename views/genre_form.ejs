@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./head'); %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2"><%- include('./sidebar'); %></div>
+        <div class="col-sm-10">
+          <h1><%= title %></h1>
+          <form method="post" action="">
+            <div class="form-group">
+              <label for="name">Genre:</label>
+              <input
+                class="name form-control"
+                type="text"
+                name="name"
+                placeholder="Fantasy, Poetry etc."
+                value="<%= typeof genre !== 'undefined' ? genre.name : '' %>"
+              />
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </form>
+          <% if (typeof errors !== 'undefined') { %> <% for (let i = 0; i <
+          errors.length; i++) { %>
+          <li><%= errors[i].msg %></li>
+          <% } %> <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
